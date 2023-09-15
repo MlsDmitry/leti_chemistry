@@ -1,0 +1,57 @@
+\documentclass[14pt, a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{titlesec}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\usepackage{physics}
+\usepackage{amsthm}
+\usepackage[version=4]{mhchem}
+% \usepackage{showframe}
+\usepackage{geometry}
+\usepackage{ragged2e}
+\usepackage{tabularx}
+
+\usepackage{polyglossia}
+\usepackage{fontspec}
+
+\setmainlanguage[babelshorthands=true]{russian}
+
+
+% \setmonofont{Courier}                          % моноширинный шрифт
+% \newfontfamily\cyrillicfonttt{Courier}         % моноширинный шрифт для кириллицы
+\defaultfontfeatures{Ligatures=TeX}                % стандартные лигатуры TeX, замены нескольких дефисов на тире и т. п. Настройки моноширинного шрифта должны идти до этой строки, чтобы при врезках кода программ в коде не применялись лигатуры и замены дефисов
+\setmainfont{Times New Roman Cyr}                      % Шрифт с засечками
+\newfontfamily\cyrillicfont{Times New Roman Cyr}       % Шрифт с засечками для кириллицы
+% \setsansfont{Arial}                                % Шрифт без засечек
+
+\setotherlanguages{english}
+
+\geometry{a4paper, left=3cm, right=1cm, top=2cm, bottom=2cm}
+
+
+\newtheorem{definition}{Определение}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
+\let\oldforall\forall
+\renewcommand{\forall}{\oldforall \, }
+
+\let\oldexist\exists
+\renewcommand{\exists}{\oldexist \: }
+
+\newcommand\existu{\oldexist! \: }
+
+\begin{document}
+\justifying
+
+\import{./}{title-page.tex}
+\import{./}{3_4_goal_theoretics.tex}
+
+\end{document}
+
